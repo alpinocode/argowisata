@@ -219,8 +219,29 @@
             </div>
           </div>
         </div>
-        
-        
 
+
+        {{-- Documentasi layout content  --}}
+
+        <div style="background-color: #F8F9FA; margin-top: 40px; height: auto;">
+          <div class="flex-wrap" style="margin-bottom: 40px; text-align: center;">
+              <h1 style="font-weight: bold; font-size: 4rem; margin-top: 40px;">Documentation</h1>
+              <div class="flex justify-center items-center" style="gap: 100px; margin-top: 40px; flex-wrap: wrap;">
+                  <div style="max-width: 700px; margin-top: 40px; flex: 1 1 300px;">
+                      <img src="{{asset('image/documentasi1.jpg')}}" alt="" style="width: 100%; height: auto; border-radius: 20px;">
+                      <p style=" margin-top: 20px;">Berbagai aktifitas bisa dilakukan pengunjung, diantaranya memetik jambu, menikmati jus jambu,
+                          <br> memberi makan hewan ternak seperti ikan, kambing, dan kelinci, serta menanam padi di sawah.</p>
+                  </div>
+                  <div style="max-width: 700px; margin-top: 40px; flex: 1 1 300px;">
+                      <img src="{{asset('image/documentasi.jpg')}}" alt="" style="width: 100%; height: auto; border-radius: 20px;">
+                      <p style=" margin-top: 20px;">Berbagai aktifitas bisa dilakukan pengunjung, diantaranya memetik jambu, menikmati jus jambu,
+                          <br> memberi makan hewan ternak seperti ikan, kambing, dan kelinci, serta menanam padi di sawah.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      
+      
     </div>
 </x-app-layout>
