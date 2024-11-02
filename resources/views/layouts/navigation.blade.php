@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="{{ route('beranda') }}">
-                    <img src="{{ asset('image/logo.png') }}" alt="eco Park" style="width: 100px; height: 50px;">
+                    <img src="{{ asset('image/logo.png') }}" alt="eco Park" style="width: 110px; height: 50px;">
                 </a>
             </div>
 
