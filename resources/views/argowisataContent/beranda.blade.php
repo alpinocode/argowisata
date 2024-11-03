@@ -41,6 +41,13 @@
           margin-top: 20px !important; /* Menghapus margin kiri di mobile */
 
         }
+        .content-information {
+          margin: 10px !important; 
+        }
+        .time-content {
+          margin-left: 40px !important;
+        }
+
     }
 
      /* Responsive styling */
@@ -288,34 +295,91 @@
         </div>
       </div>
 
-      {{-- location layout content --}}
-      <div style="background-color: #F8F9FA; height: auto; margin-bottom: 40px; " class="flex-wrap">
-        <div>
-          <h1 class="text-center" style="font-weight: bold; font-size: 4rem; margin-top: 80px;">Temukan Kami</h1>
-          <h5 class="text-center" style="font-weight: bold; font-size: 2rem; margin-top: 10px; color:#448337;">Agrowisata Jambu Marina Batam</h5>
-          <div style="margin-top: 100px" class="d-flex justify-content-center align-items-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1378718563965!2d103.99297947581738!3d1.058192962442143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98dd169288035%3A0xcfb6f11e988fddfc!2sAgrowisata%20kibing!5e0!3m2!1sid!2sid!4v1730634163254!5m2!1sid!2sid" width="1440px" height="907px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-          </div>
+  {{-- location layout content --}}
+    <div style="background-color: #F8F9FA; margin-bottom: 40px;" class="container-fluid py-5">
+      <div class="text-center mb-5">
+        <h1 class="fw-bold" style="font-size: 3rem; margin-top: 20px;">Temukan Kami</h1>
+        <h5 class="fw-bold" style="font-size: 1.8rem; color:#448337; margin-top: 10px;">Agrowisata Jambu Marina Batam</h5>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mb-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1378718563965!2d103.99297947581738!3d1.058192962442143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98dd169288035%3A0xcfb6f11e988fddfc!2sAgrowisata%20kibing!5e0!3m2!1sid!2sid!4v1730634163254!5m2!1sid!2sid" 
+          width="80%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
 
+      <div class="row justify-content-center text-center" >
+        {{-- contact content --}}
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center" style="margin-top: 25px;">
+          <img src="{{asset('image/telephone.png')}}" alt="Phone Icon" width="100px" class="mb-2">
+          <h4 class="fw-bold" style="font-size: 1.5rem;">0812-7010-8778</h4>
+        </div>
+        {{-- location content --}}
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center" style="margin-top: 25px;">
+          <img src="{{asset('image/map.png')}}" alt="Map Icon" width="100px" class="mb-2">
+          <h4 class="fw-bold" style="font-size: 1.5rem;">Jl. Raya Marina City, Tj. Riau, Kec. Sekupang,<br>Kota Batam, Kepulauan Riau 29425</h4>
+        </div>
+        {{-- time content --}}
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center" style="margin-top: 25px;">
+          <img src="{{asset('image/clock.png')}}" alt="Clock Icon" width="100px" class="mb-2">
+          <h4 class="fw-bold" style="font-size: 1.5rem;">08.00 s/d 18.00 WIB</h4>
         </div>
       </div>
-      <div class="flex justify-between" style="margin-top: 50px; margin-left: 200px; gap: 50px; ">
-        {{-- contact content --}}
-          <div >  
-            <img src="{{asset('image/telephone.png')}}" alt="" width="100px" style="margin-left: 45px;">
-            <h4 style="margin-top: 20px; font-weight: bold; font-size: 1.5rem;">0812-7010-8778</h4>
+    </div>
+
+
+
+      {{-- testimonial content --}}
+      <div style=" height: auto; " class="flex-wrap">
+        <h1 class="text-center" style="font-weight: bold; font-size: 4rem; margin-top: 80px; ">Testimoni</h1>
+        <h4 class="text-center" style="font-weight: bold; font-size: 2rem; margin-top: 10px; color:#448337;">Comment dari Pengunjung</h4>
+        <div class="flex flex-wrap align-items-center justify-content-center" style="margin-top: 50px;gap: 30px; ">
+            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px; ">
+              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
+              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+              </div>
+                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
+            </div>
+            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
+              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
+              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+              </div>
+                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
+            </div>
+            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
+              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
+              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+              </div>
+                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
+            </div>
+            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
+              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
+              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+              </div>
+                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
+            </div>
           </div>
-        {{-- location content --}}
-          <div >
-            <img src="{{asset('image/map.png')}}" alt="" width="100px" style="margin-left: 190px">
-            <h4 style="margin-top:20px; font-weight: bold; font-size: 1.5rem;" class="text-center">Jl. Raya Marina City, Tj. Riau, Kec. Sekupang, 
-              <br>Kota Batam, Kepulauan Riau 29425</h4>
-          </div>
-        {{-- time content --}}
-          <div style="margin-right: 220px;">
-            <img src="{{asset('image/clock.png')}}" alt="" width="100px" style="margin-left: 60px">
-            <h4 style="margin-top:20px; font-weight: bold; font-size: 1.5rem;">08.00 s/d 18.00 WIB</h4>
-          </div>
+        </div>
       </div>
+
+
   </div>
 </x-app-layout>
