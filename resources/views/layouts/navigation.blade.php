@@ -16,20 +16,9 @@
                     <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')">
                         {{ __('Beranda') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Fasilitas') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Gallery') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Virtual Tour') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Faq') }}
-                    </x-nav-link> --}}
                 </div>
 
+                @auth
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex items-center">
                     <x-dropdown align="right" width="48">
@@ -56,6 +45,8 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
+                    
+                @endauth
             </div>
 
             <!-- Hamburger Menu (Responsive) -->
@@ -77,6 +68,7 @@
                 {{ __('Beranda') }}
             </x-responsive-nav-link>
         </div>
+        @auth
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
@@ -94,5 +86,6 @@
                 </form>
             </div>
         </div>
+        @endauth
     </div>
 </nav>
