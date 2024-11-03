@@ -266,8 +266,9 @@
           </div>
         </div>
 
+        {{-- Mitra layout content --}}
       <div>
-          <h1 style="font-weight: bold; font-size: 4rem; margin-top: 40px; text-align: center;">Mitra Kami</h1>
+          <h1 style="font-weight: bold; font-size: 4rem; margin-top: 40px; text-align: center; flex-wrap:wrap">Mitra Kami</h1>
           <div class="slider" style="margin-top: 40px; margin-bottom: 40px;">
               <div class="slider-items">
                   <!-- Item Asli -->
@@ -285,6 +286,36 @@
               </div>
           </div>
         </div>
+      </div>
+
+      {{-- location layout content --}}
+      <div style="background-color: #F8F9FA; height: auto; margin-bottom: 40px; " class="flex-wrap">
+        <div>
+          <h1 class="text-center" style="font-weight: bold; font-size: 4rem; margin-top: 80px;">Temukan Kami</h1>
+          <h5 class="text-center" style="font-weight: bold; font-size: 2rem; margin-top: 10px; color:#448337;">Agrowisata Jambu Marina Batam</h5>
+          <div style="margin-top: 100px" class="d-flex justify-content-center align-items-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1378718563965!2d103.99297947581738!3d1.058192962442143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98dd169288035%3A0xcfb6f11e988fddfc!2sAgrowisata%20kibing!5e0!3m2!1sid!2sid!4v1730634163254!5m2!1sid!2sid" width="1440px" height="907px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+          </div>
+
+        </div>
+      </div>
+      <div class="flex justify-between" style="margin-top: 50px; margin-left: 200px; gap: 50px; ">
+        {{-- contact content --}}
+          <div >  
+            <img src="{{asset('image/telephone.png')}}" alt="" width="100px" style="margin-left: 45px;">
+            <h4 style="margin-top: 20px; font-weight: bold; font-size: 1.5rem;">0812-7010-8778</h4>
+          </div>
+        {{-- location content --}}
+          <div >
+            <img src="{{asset('image/map.png')}}" alt="" width="100px" style="margin-left: 190px">
+            <h4 style="margin-top:20px; font-weight: bold; font-size: 1.5rem;" class="text-center">Jl. Raya Marina City, Tj. Riau, Kec. Sekupang, 
+              <br>Kota Batam, Kepulauan Riau 29425</h4>
+          </div>
+        {{-- time content --}}
+          <div style="margin-right: 220px;">
+            <img src="{{asset('image/clock.png')}}" alt="" width="100px" style="margin-left: 60px">
+            <h4 style="margin-top:20px; font-weight: bold; font-size: 1.5rem;">08.00 s/d 18.00 WIB</h4>
+          </div>
       </div>
   </div>
 </x-app-layout>
