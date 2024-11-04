@@ -12,4 +12,9 @@ class argowisataContentController extends Controller
     {
         return view('argowisataContent.beranda');
     }
+
+    public function fasilitas() : View
+    {
+        return view('argowisataContent.fasilitas');
+    }
 }
