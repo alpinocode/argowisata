@@ -70,9 +70,9 @@
     {{-- image content here --}}
     <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="border-radius: 50%; width: 14px; height: 14px;"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active" style="border-radius: 50%; width: 14px; height: 14px;"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active" style="border-radius: 50%; width: 14px; height: 14px;"></li>
       </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -135,7 +135,7 @@
             <div class="card-body">
               <div class="d-flex align-items-center mb-2">
                 <img src="{{ asset('image/pot.png') }}" alt="" style="width:45px; height: 45px;">
-                  <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem">Botanical Park</h5>
+                  <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem; font-family: Signika;">Botanical Park</h5>
               </div>
                 <p class="card-text" style="margin-bottom:10px">Berisi jenis-jenis tumbuhan yang ada tersedia di JMB Eco Park dan juga terdapat informasi singkat tentang tumbuhannya.</p>
                 <hr style="border-top: 2px solid #BFBFBFdd; margin: 10px 0;">
@@ -158,7 +158,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-2">
                     <img src="{{ asset('image/wahana.png') }}" alt="" style="width:45px; height: 45px;">
-                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem">Botanical Park</h5>
+                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem; font-family: Signika;">Botanical Park</h5>
                   </div>
                   <p class="card-text" style="margin-bottom:10px">Berbagai aktifitas bisa dilakukan pengunjung, seperti fun game dan  playgorund untuk anak-anak usia dini.</p>
                   <hr style="border-top: 2px solid #BFBFBFdd; margin: 10px 0;">
@@ -181,7 +181,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-2">
                     <img src="{{ asset('image/lamp.png') }}" alt="" style="width:45px; height: 45px;">
-                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem">Botanical Park</h5>
+                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem; font-family: Signika;">Botanical Park</h5>
                   </div>
                   <p class="card-text" style="margin-bottom:10px">Pada Education Park berisi edukasi menanam, mencangkok, memasak, memupuk, menyiram. Terdapat kegiatan yang melatih lifeskill juga, seperti membuat jus, fotogafi, membuat coklat.</p>
                   <hr style="border-top: 2px solid #BFBFBFdd; margin: 10px 0;">
@@ -204,7 +204,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-2">
                     <img src="{{ asset('image/wahana.png') }}" alt="" style="width:45px; height: 45px;">
-                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem">Botanical Park</h5>
+                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem; font-family: Signika;">Botanical Park</h5>
                   </div>
                   <p class="card-text" style="margin-bottom:10px">Berbagai aktifitas bisa dilakukan pengunjung, diantaranya memetik jambu, menikmati jus jambu, </p>
                   <hr style="border-top: 2px solid #BFBFBFdd; margin: 10px 0;">
@@ -227,7 +227,7 @@
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-2">
                     <img src="{{ asset('image/wahana.png') }}" alt="" style="width:45px; height: 45px;">
-                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem">Botanical Park</h5>
+                    <h5 class="card-title mt-2 ms-2" style="font-weight: bold; font-size: 1.5rem; font-family: Signika;">Botanical Park</h5>
                   </div>
                   <p class="card-text" style="margin-bottom:10px">Berbagai aktifitas bisa dilakukan pengunjung, diantaranya memetik jambu, menikmati jus jambu, </p>
                   <hr style="border-top: 2px solid #BFBFBFdd; margin: 10px 0;">

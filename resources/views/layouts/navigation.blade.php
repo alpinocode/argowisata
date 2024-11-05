@@ -1,3 +1,11 @@
+<style>
+    .text-decoration-none:hover {
+        color: #E45F58;
+    }
+
+</style>
+
+
 <nav x-data="{ open: false }" class="border-b border-gray-100" style="background-color: #E9F2D4;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,22 +21,13 @@
             <div class="flex items-center space-x-8">
                 <!-- Navigation Links -->
                 <div class="hidden sm:flex " style="gap: 20px; ">
-                    <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')" class="text-decoration-none">
+                    <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')" class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
                         {{ __('Beranda') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')" class="text-decoration-none "  style="font-family: 'Poppins'; font-weight: bold;">
                         {{ __('Fasilitas') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Gallery') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Beranda') }}
-                    {{ __('Virtual Tour') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Faq') }}
-                    </x-nav-link> --}}
+                 
                 </div>
                 @auth
                 <!-- Settings Dropdown -->
@@ -75,8 +74,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden ">
         <div class="pt-2 pb-3 space-y-1 ">
-            <x-responsive-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')"  class="text-decoration-none">
+            <x-responsive-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')"  class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
                 {{ __('Beranda') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')"  class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
+                {{ __('fasilitas') }}
             </x-responsive-nav-link>
         </div>
         @auth
