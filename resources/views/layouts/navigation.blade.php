@@ -86,6 +86,9 @@
             <x-responsive-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')"  class="text-decoration-none" style="font-weight: bold;">
                 {{ __('getInTouch') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')"  class="text-decoration-none" style="font-weight: bold;">
+                {{ __('Gallery') }}
+            </x-responsive-nav-link>
         </div>
         @auth
         <div class="pt-4 pb-1 border-t border-gray-200 text-decoration-none">
