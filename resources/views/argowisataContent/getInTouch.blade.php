@@ -62,7 +62,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="flex block-content flex-wrap" style="margin-left: 250px; margin-top: 100px">
             <img src="{{asset('image/wisata-berkuda.jpg')}}" alt="wisata" width="40%" style="margin-top: 20px" class="img-fluid">
@@ -92,7 +91,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="flex block-content flex-wrap" style="margin-left: 250px; margin-top: 100px">
             <img src="{{asset('image/wisata-berkuda.jpg')}}" alt="wisata" width="40%" style="margin-top: 20px" class="img-fluid">
@@ -122,7 +120,16 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <div class="flex justify-center items-center mt-4">
+            <h1 style="font-weight: bold; font-size: 3rem; text-align: center;">Want to Holiday with us</h1>
+        </div>
+        <div class="flex justify-center items-center mt-4">
+            <x-primary-button class="text-center" style="background-color: #F26363; ">
+                {{ __('Pesan Tiket') }}
+            </x-primary-button>
+        </div>
+        
     </div>
 </x-app-layout>
