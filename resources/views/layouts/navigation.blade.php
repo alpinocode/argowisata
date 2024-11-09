@@ -30,6 +30,9 @@
                     <x-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')" class="text-decoration-none "  style=" font-weight: bold;">
                         {{ __('getInTouch') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" class="text-decoration-none "  style=" font-weight: bold;">
+                        {{ __('Gallery') }}
+                    </x-nav-link>
                  
                 </div>
                 @auth
