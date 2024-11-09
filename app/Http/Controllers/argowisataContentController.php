@@ -22,4 +22,9 @@ class argowisataContentController extends Controller
     {
         return view('argowisataContent.getInTouch');
     }
+
+    public function gallery(): View
+    {
+        return view('argowisataContent.galery');
+    }
 }
