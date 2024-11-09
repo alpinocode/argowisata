@@ -26,6 +26,7 @@
         }
     }
 </style>
+<title>Fasilitas</title>
 
 <x-app-layout>
     <div style="height: auto;">

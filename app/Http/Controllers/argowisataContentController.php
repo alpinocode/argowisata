@@ -17,4 +17,9 @@ class argowisataContentController extends Controller
     {
         return view('argowisataContent.fasilitas');
     }
+
+    public function getInTouch() : View
+    {
+        return view('argowisataContent.getInTouch');
+    }
 }

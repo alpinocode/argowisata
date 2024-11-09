@@ -21,11 +21,14 @@
             <div class="flex items-center space-x-8">
                 <!-- Navigation Links -->
                 <div class="hidden sm:flex " style="gap: 20px; ">
-                    <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')" class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
+                    <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')" class="text-decoration-none" style=" font-weight: bold;">
                         {{ __('Beranda') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')" class="text-decoration-none "  style="font-family: 'Poppins'; font-weight: bold;">
+                    <x-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')" class="text-decoration-none "  style=" font-weight: bold;">
                         {{ __('Fasilitas') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')" class="text-decoration-none "  style=" font-weight: bold;">
+                        {{ __('getInTouch') }}
                     </x-nav-link>
                  
                 </div>
@@ -74,11 +77,14 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden ">
         <div class="pt-2 pb-3 space-y-1 ">
-            <x-responsive-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')"  class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
+            <x-responsive-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')"  class="text-decoration-none" style=" font-weight: bold;">
                 {{ __('Beranda') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')"  class="text-decoration-none" style="font-family: 'Poppins'; font-weight: bold;">
+            <x-responsive-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')"  class="text-decoration-none" style=" font-weight: bold;">
                 {{ __('fasilitas') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')"  class="text-decoration-none" style="font-weight: bold;">
+                {{ __('getInTouch') }}
             </x-responsive-nav-link>
         </div>
         @auth

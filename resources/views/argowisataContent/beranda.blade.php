@@ -65,6 +65,7 @@
     }
      
 </style>
+<title>Home</title>
 <x-app-layout>
   <div class="flex-wrap" >
     {{-- image content here --}}

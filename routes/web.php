@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [argowisataContentController::class, 'beranda'])->name('beranda');
 Route::get('/fasilitas', [argowisataContentController::class, 'fasilitas'])->name('fasilitas');
-
+Route::get('/getInTouch', [argowisataContentController::class, 'getInTouch'])->name('getInTouch');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
