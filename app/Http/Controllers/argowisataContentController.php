@@ -27,4 +27,8 @@ class argowisataContentController extends Controller
     {
         return view('argowisataContent.galery');
     }
+    public function faq(): View
+    {
+        return view('argowisataContent.faq');
+    }
 }
