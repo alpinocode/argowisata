@@ -22,16 +22,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden sm:flex " style="gap: 20px; ">
                     <x-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')" class="text-decoration-none" style=" font-weight: bold;">
-                        {{ __('Beranda') }}
+                        {{ __('BERANDA') }}
                     </x-nav-link>
                     <x-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')" class="text-decoration-none "  style=" font-weight: bold;">
-                        {{ __('Fasilitas') }}
+                        {{ __('FASILITAS') }}
                     </x-nav-link>
                     <x-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')" class="text-decoration-none "  style=" font-weight: bold;">
-                        {{ __('getInTouch') }}
+                        {{ __('CALL US') }}
                     </x-nav-link>
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" class="text-decoration-none "  style=" font-weight: bold;">
-                        {{ __('Gallery') }}
+                        {{ __('GALLERY') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('faq')" :active="request()->routeIs('faq')" class="text-decoration-none "  style=" font-weight: bold;">
+                        {{ __('FAQ') }}
                     </x-nav-link>
                  
                 </div>
@@ -81,16 +84,19 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden ">
         <div class="pt-2 pb-3 space-y-1 ">
             <x-responsive-nav-link :href="route('beranda')" :active="request()->routeIs('beranda')"  class="text-decoration-none" style=" font-weight: bold;">
-                {{ __('Beranda') }}
+                {{ __('BERANDA') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('fasilitas')" :active="request()->routeIs('fasilitas')"  class="text-decoration-none" style=" font-weight: bold;">
-                {{ __('fasilitas') }}
+                {{ __('FASILITAS') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('getInTouch')" :active="request()->routeIs('getInTouch')"  class="text-decoration-none" style="font-weight: bold;">
-                {{ __('getInTouch') }}
+                {{ __('CALL US') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')"  class="text-decoration-none" style="font-weight: bold;">
-                {{ __('Gallery') }}
+                {{ __('GALLERY') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('faq')" :active="request()->routeIs('faq')"  class="text-decoration-none" style="font-weight: bold;">
+                {{ __('FAQ') }}
             </x-responsive-nav-link>
         </div>
         @auth
