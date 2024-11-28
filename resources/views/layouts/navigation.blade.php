@@ -33,6 +33,9 @@
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" class="text-decoration-none "  style=" font-weight: bold;">
                         {{ __('GALLERY') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('orderTicketPage')" :active="request()->routeIs('orderTicketPage')" class="text-decoration-none "  style=" font-weight: bold;">
+                        {{ __('Virtual Tour') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('faq')" :active="request()->routeIs('faq')" class="text-decoration-none "  style=" font-weight: bold;">
                         {{ __('FAQ') }}
                     </x-nav-link>
@@ -94,6 +97,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')"  class="text-decoration-none" style="font-weight: bold;">
                 {{ __('GALLERY') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('orderTicketPage')" :active="request()->routeIs('orderTicketPage')"  class="text-decoration-none" style="font-weight: bold;">
+                {{ __('Virtual Tour') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('faq')" :active="request()->routeIs('faq')"  class="text-decoration-none" style="font-weight: bold;">
                 {{ __('FAQ') }}

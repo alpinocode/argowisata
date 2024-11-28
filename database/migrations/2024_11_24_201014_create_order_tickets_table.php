@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('order_tickets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('orderTicket_id')->constrained()->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
             $table->string('telepon');
             $table->string('email');
             $table->string('alamat');
             $table->date('tanggal_pesan');
-            $table->date('waktu_pesan');
+            $table->time('waktu_pesan');
             $table->integer('jumlah_tiket');
         });
     }
