@@ -14,7 +14,7 @@ Route::get('/gallery', [argowisataContentController::class, 'gallery'])->name('g
 Route::get('/faq', [argowisataContentController::class, 'faq'])->name('faq');
 Route::get('/orderTicket', [OrderTicket::class, 'page'])->name('orderTicketPage');
 
-Route::middleware(['auth', TokenRemember::class])->group(function () {
+Route::middleware(['auth', 'verified', TokenRemember::class])->group(function () {
     Route::post('/orderTicket',[OrderTicket::class, 'create'])->name('orderTicket.store');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
