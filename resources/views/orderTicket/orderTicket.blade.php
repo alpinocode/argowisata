@@ -60,6 +60,9 @@
             font-size: 24px;
         }
 
+        .from-controle {
+            width: 420px !important;    
+        }
         .d-flex {
             flex-wrap: wrap !important;
         }
@@ -162,9 +165,27 @@
                             <div class="mb-3 styled-input">
                                 <label for="jumlah_tiket" class="form-label">Jumlah Tiket</label>
                                 <input type="number" class="form-control" name="jumlah_tiket" id="jumlah_tiket" required>
-                                <x-input-error :messages="$errors->get('jumlah_tiket')" class="mt-2" />
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="mb-3 styled-input">
+                                <label for="harga_masuk" class="form-label">HARGA MASUK</label>
+                                <select name="harga_masuk" id="harga_masuk" class="from-controle text-center" style="border-radius: 10px; border-color:aliceblue; width: 200px;">
+                                    <option name="harga_masuk" id="harga_masuk">dewasa</option>
+                                    <option name="harga_masuk" id="harga_masuk">anak-anak</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3 styled-input ">
+                                <label for="harga_parkir" class="form-label">HARGA TIKET</label>
+                                <select name="harga_parkir" id="harga_parkir" class="from-controle text-center" style="border-radius: 10px; border-color:aliceblue; width: 200px;">
+                                    <option name="harga_parkir" id="harga_parkir">motor</option>
+                                    <option name="harga_parkir" id="harga_parkir">mobil</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                     </div>
 
                     <x-primary-button class="ms-4 button-content" style="background-color: #448337; margin-left: 700px;">
@@ -176,16 +197,3 @@
     </div>
 </x-app-layout>
 
-<script>
-    const xIcon = document.getElementById('x-icon');
-    const errorCard = document.getElementById('error-card');
-    const successCard = document.getElementById('success-card');
-
-
-    xIcon.addEventListener('click', () => {
-        errorCard.style.display = 'none';
-    });
-    xIcon.addEventListener('click', () => {
-        successCard.style.display = 'none';
-    })
-</script>
