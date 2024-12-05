@@ -59,6 +59,9 @@
                             <x-dropdown-link :href="route('profile.edit')" class="text-decoration-none" style=" font-weight: bold;">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
+                            <x-dropdown-link :href="route('history')" class="text-decoration-none" style=" font-weight: bold;">
+                                {{ __('History') }}
+                            </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="text-decoration-none" style=" font-weight: bold; margin-lefth: ">

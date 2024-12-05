@@ -3,6 +3,7 @@
 use App\Http\Controllers\argowisataContentController;
 use App\Http\Controllers\OrderTicket;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserHistory;
 use App\Http\Middleware\TokenRemember;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,9 @@ Route::get('/faq', [argowisataContentController::class, 'faq'])->name('faq');
 Route::get('/orderTicket', [OrderTicket::class, 'page'])->name('orderTicketPage');
 
 Route::middleware(['auth', TokenRemember::class])->group(function () {
+    Route::get('/history', [UserHistory::class, 'history'])->name('history');
     Route::post('/orderTicket',[OrderTicket::class, 'create'])->name('orderTicket.store');
-    Route::get('/invoice/{id}', [OrderTicket::class, 'invoice']);
+    Route::get('/invoice/{id}', [OrderTicket::class, 'invoice'])->name('invoice');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
