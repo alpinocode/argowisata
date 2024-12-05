@@ -329,54 +329,22 @@
 
 
       {{-- testimonial content --}}
+     
       <div style=" height: auto; " class="flex-wrap">
         <h1 class="text-center" style="font-weight: bold; font-size: 4rem; margin-top: 80px; ">Testimoni</h1>
         <h4 class="text-center" style="font-weight: bold; font-size: 2rem; margin-top: 10px; color:#448337;">Comment dari Pengunjung</h4>
         <div class="flex flex-wrap align-items-center justify-content-center" style="margin-top: 50px;gap: 30px; ">
-            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px; ">
-              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
-              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
+            @foreach ($comment as $comments)
+              <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px; ">
+                  <img src="{{ asset('image/coffe-shop.png') }}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
+                  <div class="flex" style="margin-left: 20px; margin-top: 15px; gap: 5px;">
+                      @for ($i = 1; $i <= $comments->rating; $i++)
+                          <img src="{{ asset('icon/Star.svg') }}" alt="" width="25px" height="auto">
+                      @endfor
+                  </div>
+                  <h5 style="margin-left: 20px; margin-top: 25px;">“{{ $comments->comentar }}”</h5>
               </div>
-                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
-            </div>
-            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
-              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
-              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-              </div>
-                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
-            </div>
-            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
-              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
-              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-              </div>
-                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
-            </div>
-            <div class="card" style="border-radius: 2px; width: 248px; height: 380px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 20px;">
-              <img src="{{asset('image/coffe-shop.png')}}" alt="" width="74px" height="74px" style="border-radius: 50%; margin-top: 20px; margin-left: 20px;">
-              <div class="flex" style="margin-left: 20px; margin-top: 15px; gap:5px">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-                  <img src="{{asset('image/star.png')}}" alt="" width="25px" height="auto">
-              </div>
-                <h5 style="margin-left: 20px; margin-top: 25px;">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.”</h5>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

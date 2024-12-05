@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\userComentar;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -10,7 +11,8 @@ class argowisataContentController extends Controller
 {
     public function beranda(): View
     {
-        return view('argowisataContent.beranda');
+        $comment = userComentar::all();
+        return view('argowisataContent.beranda', compact('comment'));
     }
 
     public function fasilitas() : View
