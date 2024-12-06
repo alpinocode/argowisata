@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\OrderTicket as ModelsOrderTicket;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +58,7 @@ class OrderTicket extends Controller
             }
         
 
-            $request->request->add(['total_harga'=> $validatedData['jumlah_tiket'] * $harga_masuk + $harga_parkir]);
+            $request->request->add(['total_harga'=> $validatedData['jumlah_tiket'] * ($harga_masuk + $harga_parkir) + 2500]);
 
             if($request->user()->name !== $validatedData['name'] || $request->user()->email !== $validatedData['email']) {
                 return abort(403, 'Tidak Bisa Melakukan Pemesanan Tiket, email atau nama tidak sesuai.');
@@ -118,24 +119,28 @@ class OrderTicket extends Controller
 
         
         $serverKey = config('midtrans.server_key');
-        $hashed = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount .  $request->bank .$serverKey );
+        $hashed = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount  .$serverKey );
 
         if($hashed == $request->signature_key) {
            
-            if($request->transaction_status == 'capture') {
+            if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement') {
                 $order = ModelsOrderTicket::find($request->order_id);
                 $order->update(['status' => 'paid', 'payment_method' => $request->payment_type]);
             }
         }
     }
 
-    public function invoice($id)
+    public function invoice($id, Request $request)
     {
         try {
             //code...
             $user = Auth::user();
             $order = ModelsOrderTicket::where('user_id',$user->id)->where('id', $id)->first();
-    
+            
+            if($request->get('export') == 'pdf') {
+                $pdf = Pdf::loadView('pdf.invoice', ["data" => $order]);
+                return $pdf->download('invoice.pdf');
+            }
             if(!$order){
                 return redirect()->route('orderTicketPage')->with('error', 'Tidak ada pemesanan tiket.');
             } else {

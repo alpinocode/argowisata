@@ -168,31 +168,38 @@
             <div id="snap-container"></div>
 
             <script type="text/javascript">
-                // For example trigger on button clicked, or any time you need
+                // Ambil tombol dengan ID "pay-button"
                 var payButton = document.getElementById('pay-button');
+                
+                // Tambahkan event listener pada tombol
                 payButton.addEventListener('click', function () {
-                // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token.
-                // Also, use the embedId that you defined in the div above, here.
-                window.snap.embed('{{$snapToken}}', {
-                    embedId: 'snap-container',
-                    onSuccess: function (result) {
-                    /* You may add your own implementation here */
-                    window.location.href = '/invoice/{{$order->id}}';
-                    },
-                    onPending: function (result) {
-                    /* You may add your own implementation here */
-                    alert("wating your payment!"); console.log(result);
-                    },
-                    onError: function (result) {
-                    /* You may add your own implementation here */
-                    alert("payment failed!"); console.log(result);
-                    },
-                    onClose: function () {
-                    /* You may add your own implementation here */
-                    alert('you closed the popup without finishing the payment');
-                    }
-                });
+                    // Pastikan mengganti SNAP_TRANSACTION_TOKEN dengan token transaksi dari server
+                    var snapToken = '{{$snapToken}}'; // Pastikan variabel ini diisi dengan token dari backend
+                    
+                    // Jalankan Midtrans Snap
+                    window.snap.pay(snapToken, {
+                        onSuccess: function(result) {
+                            // Implementasi jika pembayaran berhasil
+                            console.log('Pembayaran berhasil:', result);
+                            window.location.href = '/invoice/{{$order->id}}';
+                        },
+                        onPending: function(result) {
+                            // Implementasi jika pembayaran masih pending
+                            alert("Menunggu pembayaran Anda!");
+                            console.log('Status pending:', result);
+                        },
+                        onError: function(result) {
+                            // Implementasi jika pembayaran gagal
+                            alert("Pembayaran gagal!");
+                            console.error('Kesalahan pembayaran:', result);
+                        },
+                        onClose: function(e) {
+                            if(e) {
+                                return false;
+                            }
+                        }
+                    });
                 });
             </script>
         </body>
-</x-app-layout>
+    </x-app-layout>

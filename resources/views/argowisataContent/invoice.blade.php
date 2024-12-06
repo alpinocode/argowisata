@@ -63,8 +63,11 @@
         
         <div class="mt-4 d-flex flex-row gap-4 cursor-pointer back-content" style="margin-left: 320px;" onclick="window.history.back()">
             <img src="{{asset('icon/lefth-icon.svg')}}" alt="" >
-            <h2 style="font-size: 1.5rem; font-weight: bold; color:#448337" class="cursor-pointer">Kembali</h2>
+            <h2 style="font-size: 1.5rem; font-weight: bold; color:#448337; " class="cursor-pointer mt-1">Kembali</h2>
+
+            <a href="{{ route('invoice', ['id' => $order->id]) }}?export=pdf" class="btn btn-primary"> Export Pdf</a>
         </div>
+
         
         <div class="d-flex justify-content-center">
             <div class="border flex-wrap shadow flex-wrap mt-4 " style="width: 864px; height: 725px; border: 1px solid #E45F58; background-color: #D9D9D966; " >
