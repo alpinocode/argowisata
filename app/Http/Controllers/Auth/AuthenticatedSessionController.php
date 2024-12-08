@@ -27,6 +27,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $request->createToken('api-product')->plainTextToken;
         
         return redirect()->intended(route('beranda', absolute: false));
     }
