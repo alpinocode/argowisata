@@ -100,7 +100,7 @@
 </style>
 <x-app-layout>
     @if ($errors->any())
-        <div class="card text-white bg-danger mb-3 " style="width: 50%; justify-content: center; margin-left: 25%;" id="error-card">
+        <div class="card text-white bg-danger mb-3 " style="width: 50%; justify-content: center; margin-left: 25%;" id="error-card" route="{{route('payment', ['id' => $order->id]) }}">
             <div class="d-flex card-header" style="justify-content: space-between;">
                 <h2>Error</h2>
                 <i class="bi bi-file-x-fill" id="x-icon" style="cursor: pointer; font-size: 1.5rem;"></i>
@@ -142,28 +142,27 @@
         <body>
             
             
-            <div class="container d-flex justify-center items-center " style="margin-top:50px;">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card-sl">
-                            <div class="card-image">
-                                <img src="{{asset('image/logo.png')}}" alt="">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="row w-100 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card card-sl p-3 shadow-lg border-0 rounded-lg text-center">
+                            <div class="card-image text-center">
+                                <img src="{{asset('image/logo.png')}}" alt="Logo" class="img-fluid" style="max-width: 150px;">
                             </div>
-                            
-                            <div class="card-heading">
-                                Halo {{$order->name}}
+                            <div class="card-body">
+                                <h4 class="card-heading mb-3">Halo, {{$order->name}}</h4>
+                                <div class="card-text">
+                                    <p><strong>Deskripsi Order:</strong> {{$order->harga_masuk}}</p>
+                                    <p><strong>Biaya Parkir:</strong> {{$order->harga_parkir}}</p>
+                                    <hr>
+                                    <p class="font-weight-bold text-primary">Total Harga: Rp. {{number_format($order->total_harga, 0, ',', '.')}}</p>
+                                </div>
+                                <button id="pay-button" class="btn btn-primary w-100 mt-3">Bayar Sekarang</button>
                             </div>
-                            <div class="card-text">
-                                <h3>Deksripsi Order: {{$order->harga_masuk}} </h3>
-                                <h3 style="margin-left: 105px">                 {{$order->harga_parkir}}</h3>
-                            </div>
-                            <div class="card-text">
-                                total Harga: Rp. {{number_format($order->total_harga, 0, ',', '.')}}
-                            </div>
-                            <button id="pay-button" class="card-button">Pay!</button>
                         </div>
                     </div>
-                </div>  
+                </div>
+            </div>
         <!-- @TODO: You can add the desired ID as a reference for the embedId parameter. -->
             <div id="snap-container"></div>
 
@@ -191,6 +190,7 @@
                         onError: function(result) {
                             // Implementasi jika pembayaran gagal
                             alert("Pembayaran gagal!");
+                            window.location.href = "/orderTicket"
                             console.error('Kesalahan pembayaran:', result);
                         },
                         onClose: function(e) {

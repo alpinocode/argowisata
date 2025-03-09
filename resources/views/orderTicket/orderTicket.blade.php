@@ -151,18 +151,6 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3 styled-input">
-                                <label for="tanggal_pesan" class="form-label">Tanggal Pesan</label>
-                                <input type="date" class="form-control" id="tanggal_pesan" name="tanggal_pesan" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3 styled-input">
-                                <label for="waktu_pesan" class="form-label">Waktu Pesan</label>
-                                <input type="time" class="form-control" id="waktu_pesan" name="waktu_pesan" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3 styled-input">
                                 <label for="jumlah_tiket" class="form-label">Jumlah Tiket</label>
                                 <input type="number" class="form-control" name="jumlah_tiket" id="jumlah_tiket" required>
                             </div>

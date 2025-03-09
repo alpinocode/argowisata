@@ -16,10 +16,10 @@ Route::get('/gallery', [argowisataContentController::class, 'gallery'])->name('g
 Route::get('/faq', [argowisataContentController::class, 'faq'])->name('faq');
 Route::get('/orderTicket', [OrderTicket::class, 'page'])->name('orderTicketPage');
 
-Route::middleware(['auth', TokenRemember::class, "verified"])->group(function () {
-
+Route::middleware(['auth', TokenRemember::class, 'verified'])->group(function () {
     Route::get('/history', [UserHistory::class, 'history'])->name('history');
     Route::post('/orderTicket',[OrderTicket::class, 'create'])->name('orderTicket.store');
+    Route::get('/payment/{id}', [OrderTicket::class, 'paymentRedirect'])->name('payment');
     Route::get('/invoice/{id}', [OrderTicket::class, 'invoice'])->name('invoice');
     Route::get('/comentars', [UserComentarsController::class, 'index'])->name('comentars');
     Route::post('/comentars', [UserComentarsController::class, 'create'])->name('comentars.store');

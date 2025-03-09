@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -18,7 +19,7 @@ class OrderTicket extends Controller
         return view('orderTicket.orderTicket');
     }
 
-    public function create(Request $request, )
+    public function create(Request $request)
     {   
         $messages = [
             'jumlah_tiket.min' => 'Jumlah tiket tidak boleh kurang dari 1.',
@@ -32,8 +33,8 @@ class OrderTicket extends Controller
                 'email' => 'required|email|max:255',
                 'telepon' => 'required|string|max:255',
                 'alamat' => 'required|string|max:255',
-                'tanggal_pesan' => 'required|date',
-                'waktu_pesan' => 'required|date_format:H:i',
+                // 'tanggal_pesan' => 'required|date',
+                // 'waktu_pesan' => 'required|date_format:H:i',
                 'jumlah_tiket' => 'required|integer|min:1|max:10',
                 'total_harga' => 'nullable|integer',
                 'status' => 'nullable|string',
@@ -70,6 +71,19 @@ class OrderTicket extends Controller
             // Simpan data pemesanan tiket ke dalam database
             $order =$request->user()->order()->create($request->all());
     
+            
+            
+         
+
+            return redirect()->route('payment', $order->id);
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $th->getMessage() );
+        }
+    }
+    
+    public function paymentRedirect($orderId) {
+        $order = ModelsOrderTicket::find($orderId);
+        try {
             /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
             composer require midtrans/midtrans-php
                                         
@@ -92,26 +106,25 @@ class OrderTicket extends Controller
 
             $params = array(
                 'transaction_details' => array(
-                    'order_id' => $order->id,
-                    'gross_amount' => $order->total_harga,
+                    'order_id' => $order['id'],
+                    'gross_amount' => $order['total_harga'],
                
                 ),
                 'customer_details' => array(
-                    'first_name' => $request->user()->name,
+                    'first_name' => $order['name'],
                     'last_name' => '',
-                    'email' => $request->user()->email,
-                    'phone' => $request->user()->telepon,
+                    'email' => $order['email'],
+                    'phone' => $order['telepon'],
                 ),
             );
 
             $snapToken = \Midtrans\Snap::getSnapToken($params);
-            
-         
 
-            return view('payment', compact('snapToken', 'order') )->with('success', 'Pemesanan tiket berhasil!');
+            return view('payment', compact('snapToken', 'order'));
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $th->getMessage() );
+            Log::error($th);
         }
+
     }
 
     public function callback(Request $request) 
@@ -125,6 +138,7 @@ class OrderTicket extends Controller
            
             if($request->transaction_status == 'capture' or $request->transaction_status == 'settlement') {
                 $order = ModelsOrderTicket::find($request->order_id);
+                Log::info("Cek data Object :".$order);
                 $order->update(['status' => 'paid', 'payment_method' => $request->payment_type]);
             }
         }
